@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cartContext } from "../context/cartContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -23,9 +24,10 @@ function ProductCard(props) {
   }
     return(
         <div className="h-[432px] relative">
-      <div className={`h-64 rounded-xl bg-[#f4f8f9] relative`}>
+          <Link to={'/product/${props._id}'}>
+        <div className={`h-64 rounded-xl bg-[#f4f8f9] relative`}>
         <img src={props.image} alt="" className="w-full h-full object-cover" />
-      </div>
+      </div></Link>
       <div className="mt-4">
         <div className=" flex items-center justify-between">
           <span className="block text-2xl font-semibold">{props.name}</span>

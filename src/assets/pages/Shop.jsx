@@ -66,8 +66,8 @@ export default function Shop() {
             <div>
             <label>Sort by: </label>
             <select value={SortMethod} onChange={selectedmethod}>
-              <option value="asc">Price:low to high</option>
-              <option value="desc">Price:high to low</option>
+              <option value="asc">Price:high to low</option>
+              <option value="desc">Price:low to high</option>
             </select>
             </div>
             
