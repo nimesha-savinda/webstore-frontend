@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import TextInput from "../components/TextInput";
 import { cartContext } from "../context/cartContext";
-//import { createOrder } from "../../services/api/orders";
+import { createOrder } from "../../services/api/orders";
 
 function Checkout() {
   const { cart } = useContext(cartContext);

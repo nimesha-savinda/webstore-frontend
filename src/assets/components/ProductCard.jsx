@@ -17,14 +17,12 @@ function ProductCard(props) {
       price:props.price,
       description:props.description})
   }
-  const ClickHandle =()=>{
-    setNum(num+1);
-    console.log(num)
-    return
-  }
+ 
+  const linkname = props._id;
+  
     return(
         <div className="h-[432px] relative">
-          <Link to={'/product/${props._id}'}>
+          <Link to={{ pathname: `/product/${linkname}` }}>
         <div className={`h-64 rounded-xl bg-[#f4f8f9] relative`}>
         <img src={props.image} alt="" className="w-full h-full object-cover" />
       </div></Link>

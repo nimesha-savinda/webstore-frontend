@@ -9,15 +9,7 @@ function Products() {
   const[SelectedCategory,setSelectCategory]=useState("ALL");
   const[Isloading,setIsloading]=useState(true);
   const[categories,setCategories]=useState([]);
-  // const categories = [
-  //   { id: "ALL", name: "All" },
-  //   { id: "1", name: "Headphones" },
-  //   { id: "2", name: "Earbuds" },
-  //   { id: "3", name: "Speakers" },
-  //   { id: "4", name: "Mobile Phones" },
-  //   { id: "5", name: "Smart Watches" },
-  // ];
-
+ 
   useEffect(()=>{
     
     getAllProducts()
