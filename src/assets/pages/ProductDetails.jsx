@@ -22,10 +22,13 @@ function ProductDetails() {
  
   return (
     <div className='py-8 px-16'>
-        <p>name:{selectedItem.name}</p>
-        <img src={selectedItem.image} alt="" className="w-full h-full object-cover" />
-        <p>price:{selectedItem.price}</p>
-        <p>description:{selectedItem.description}</p>
+        <p className='text-[3rem] font-black'>{selectedItem.name}</p>
+        <div className='flex gap-2 justify-evenly items-center'>
+        <img src={selectedItem.image} alt="" className=" object-cover" />
+        </div>
+        
+        <p className='text-[1.6rem] font-black'>price:${selectedItem.price}</p>
+        <p className='text-[1.4rem] '>{selectedItem.description}</p>
     </div>
   )
 }

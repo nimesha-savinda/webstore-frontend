@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
 import { cartContext } from '../context/cartContext';
 import { useContext } from 'react';
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/clerk-react";
 
 function Navigation(props){
 
   const {cart} = useContext(cartContext);
+  const { user, isSignedIn, isLoaded } = useUser();
   
     return(<nav className="flex items-center justify-between p-8 py-8 px-4 font-inter" >
         <div className='flex items-center gap-16'>
-          <Link className='font-extrabold text-3xl' to='/'>Mobius</Link>
+          <Link className='font-extrabold text-3xl' to='/'>Mebius</Link>
           <div className='flex items-center gap-4'>
             <Link to='/'>Home</Link>
             <Link to='/shop'>Shop</Link>
@@ -24,7 +26,22 @@ function Navigation(props){
               </div>
             </Link>
           </div>
-          <p>Hi,{props.name}</p>
+          <SignedIn>
+          <div className="flex items-center gap-x-4">
+            Hi, {user?.firstName}
+            <UserButton />
+          </div>
+        </SignedIn>
+          <SignedOut>
+          <div className="flex items-center gap-x-4">
+            <Link to="/sign-in" className="flex items-center gap-x-4 relative">
+              Sign In
+            </Link>
+            <Link to="/sign-up" className="flex items-center gap-x-4 relative">
+              Sign Up
+            </Link>
+          </div>
+        </SignedOut>
         </div>
       </nav>);
 }

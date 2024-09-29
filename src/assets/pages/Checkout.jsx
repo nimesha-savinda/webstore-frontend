@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import TextInput from "../components/TextInput";
 import { cartContext } from "../context/cartContext";
-import { createOrder } from "../../services/api/orders";
+import { createOrder } from "../components/services/api/orders";
+import { useUser } from "@clerk/clerk-react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Checkout() {
   const { cart } = useContext(cartContext);
+  const { user, isSignedIn, isLoaded } = useUser();
 
   const [formData, setFormData] = useState({
     fname: "",
@@ -14,13 +17,16 @@ function Checkout() {
     city: "",
     phone: "",
   });
+  if (!isSignedIn) {
+    return <Navigate to="/sign-in" />;
+  }
  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await createOrder({
-        userId: "123",
-        orderProducts: cart.map((el) => ({
+          userId: user.id,
+          orderProducts: cart.map((el) => ({
           productId: el._id,
           quantity: el.count,
         })),        
