@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom"
 import Navigation from "../components/Navigation"
 import { cartContext } from "../context/cartContext";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 function RootLayout(params) {
     const name="Sadeepa";
@@ -20,8 +21,11 @@ function RootLayout(params) {
     return(
         <cartContext.Provider value={{cart:cart,updateCart:updatecart}}>
         <main>
+            
             <Navigation name={name}/>
             <Outlet/>
+            <Footer/>
+            
         </main>
         </cartContext.Provider>
     )

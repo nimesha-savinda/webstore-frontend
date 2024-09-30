@@ -8,7 +8,7 @@ function Navigation(props){
   const {cart} = useContext(cartContext);
   const { user, isSignedIn, isLoaded } = useUser();
   
-    return(<nav className="flex items-center justify-between p-8 py-8 px-4 font-inter" >
+    return(<nav className="flex items-center justify-between p-8 py-8 px-4 font-inter bg-[#f4f8f9]" >
         <div className='flex items-center gap-16'>
           <Link className='font-extrabold text-3xl' to='/'>Mebius</Link>
           <div className='flex items-center gap-4'>
