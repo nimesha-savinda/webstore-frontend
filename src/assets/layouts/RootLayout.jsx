@@ -5,7 +5,7 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 
 function RootLayout(params) {
-    const name="Sadeepa";
+    
 
     const [cart,SetCart] = useState([]);
 
@@ -22,7 +22,7 @@ function RootLayout(params) {
         <cartContext.Provider value={{cart:cart,updateCart:updatecart}}>
         <main>
             
-            <Navigation name={name}/>
+            <Navigation/>
             <Outlet/>
             <Footer/>
             
