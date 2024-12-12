@@ -4,7 +4,7 @@ export const getAllProducts = async () => {
         Headers:{
             "content-type":"application/json",
         },
-    })
+    },{ mode: 'no-cors' })
     const products = await res.json();
     console.log(products);
     return products;
