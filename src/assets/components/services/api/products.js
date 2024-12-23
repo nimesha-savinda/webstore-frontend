@@ -1,10 +1,10 @@
 export const getAllProducts = async () => {
-    const res =await fetch("http://localhost:8000/api/products/",{
+    const res =await fetch("https://webstore-backend-i4tu.onrender.com/api/products/",{
         method:"GET",
         Headers:{
             "content-type":"application/json",
         },
-    })
+    },{ mode: 'no-cors' })
     const products = await res.json();
     console.log(products);
     return products;

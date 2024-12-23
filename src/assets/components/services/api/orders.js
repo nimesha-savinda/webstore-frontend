@@ -1,7 +1,7 @@
 export const createOrder = async (data) => {
     const token = await window.Clerk?.session?.getToken();
   
-    const res = await fetch("http://localhost:8000/api/orders/", {
+    const res = await fetch("https://webstore-backend-i4tu.onrender.com/api/orders/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
