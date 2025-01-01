@@ -16,7 +16,7 @@ function ProductDetails() {
 
   const selectedItem = Products.find(item => item._id === id);
   if (!selectedItem) {
-    return <div>Item not found......!</div>;
+    return <div>Loading......!</div>;
   }
 
  
