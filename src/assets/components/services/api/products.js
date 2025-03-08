@@ -18,7 +18,7 @@ export const SortProducts = async (value) => {
             "content-type":"application/json",
         },
         body: JSON.stringify({value}),
-    });
+    },{ mode: 'no-cors' });
     const SortedProducts = await res.json();
     console.log(SortedProducts);
     return SortedProducts;
